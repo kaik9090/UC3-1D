@@ -1,0 +1,36 @@
+public class Main {
+
+    static class Cidade {
+        String nome;
+        int populacao;
+
+        Cidade(String nome, int populacao) {
+            this.nome = nome;
+            this.populacao = populacao;
+        }
+    }
+
+    public static void main(String[] args) {
+        Cidade[] cidades = {
+            new Cidade("Cidade A", 50000),
+            new Cidade("Cidade B", 150000),
+            new Cidade("Cidade C", 80000),
+            new Cidade("Cidade D", 120000),
+            new Cidade("Cidade E", 300000)
+        };
+
+        int soma = 0;
+
+        System.out.println("Cidades com mais de 100 mil habitantes:");
+        for (int i = 0; i < cidades.length; i++) {
+            soma += cidades[i].populacao;
+
+            if (cidades[i].populacao > 100000) {
+                System.out.println(cidades[i].nome);
+            }
+        }
+
+        int media = soma / cidades.length;
+        System.out.println("Média populacional: " + media);
+    }
+}
